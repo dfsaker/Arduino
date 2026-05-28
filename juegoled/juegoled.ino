@@ -1,3 +1,5 @@
+#include <LCD_I2C.h>
+
 //JUEGO LUCES LED 
 
 /* 
@@ -38,11 +40,11 @@ void loop() {
 
 
   digitalWrite(LED_ROJO, HIGH);
-  delay(50);
+  delay(500);
   digitalWrite(5, HIGH);
 
-  digitalWrite(4, LOW);
-  delay(50);
+  digitalWrite(LED_ROJO, LOW);
+  delay(500);
   digitalWrite(5, LOW);
   
 
