@@ -1,6 +1,6 @@
 #include <LCD_I2C.h>
 
-//JUEGO LUCES LED 
+//JUEGO LUCES LED . . 
 
 /* 
    #define : ordenes para el entorno del desarollo o compilador, no recibe esta info la placa 
