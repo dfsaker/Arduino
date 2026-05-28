@@ -4,10 +4,12 @@
 
 
 #define LED_ROJO1 2
-#define LED_ROJO2 5
 #define LED_AMARILLO1 3
-#define LED_AMARILLO2 6
 #define LED_VERDE1 4
+
+
+#define LED_ROJO2 5
+#define LED_AMARILLO2 6
 #define LED_VERDE2 7
 
 #define  BTN_DOWN 11
