@@ -33,7 +33,7 @@ void loop()
       { 
         pin++; // Incremento una unidad 
       }
-  if ( digitalRead(BTN_DOWN) == LOW && pin>1) //  si presiona btn_down y ademas pin es mayor que 6 
+  if ( digitalRead(BTN_DOWN) == LOW && pin>1) //  si presiona btn_down y ademas pin es mayor que 1
     
       { 
         pin--; // Decremento una unidad 
