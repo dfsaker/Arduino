@@ -28,15 +28,15 @@ void loop()
    digitalWrite(pin, LOW);
    delay(150);
         
-  if ( digitalRead(BTN_UP) == LOW &&  pin <6) // &&  va a tener 0v (LOW) cuando se apriente el boton>>
+  if ( digitalRead(BTN_UP) == LOW &&  pin <6) // si presiona btn_up y ademas pin es menor que 6 
     
       { 
-        pin++;
+        pin++; // Incremento una unidad 
       }
-  if ( digitalRead(BTN_DOWN) == LOW && pin>1) // &&  va a tener 0v (LOW) cuando se apriente el boton
+  if ( digitalRead(BTN_DOWN) == LOW && pin>1) //  si presiona btn_down y ademas pin es mayor que 6 
     
       { 
-        pin--;
+        pin--; // Decremento una unidad 
       }
   
  
