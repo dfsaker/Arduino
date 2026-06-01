@@ -1,7 +1,9 @@
+#include <LCD_I2C.h>
+
 // C++ code
 //CODIGO SECUENCIAL PARA ENCENCEDER LAS 6 LUCES
 
-byte pin=1;
+byte pin=0;
 
 
 #define BTN_UP 12
@@ -23,22 +25,24 @@ void setup()
 void loop()
   
 {  
-   digitalWrite(pin, HIGH);
-   delay(150);
-   digitalWrite(pin, LOW);
-   delay(150);
+  
         
-  if ( digitalRead(BTN_UP) == LOW &&  pin <6) // si presiona btn_up y ademas pin es menor que 6 
+  if ( digitalRead(BTN_UP) == LOW &&  pin <6) // SI APRETO BTN_UP Y ADEMAS PIN ES MENOR QUE 6
     
-      { 
-        pin++; // Incremento una unidad 
+      {  
+        pin++; // INCREMENTO UNA UNIDAD 
+        digitalWrite(pin, HIGH);
+    	  delay(150);
       }
-  if ( digitalRead(BTN_DOWN) == LOW && pin>1) //  si presiona btn_down y ademas pin es mayor que 1
+  
+  if ( digitalRead(BTN_DOWN) == LOW && pin>1) // SI APRETO BTN_UP Y ADEMAS PIN ES MAYOR QUE 1
     
-      { 
-        pin--; // Decremento una unidad 
+      { digitalWrite(pin, LOW);
+        pin--; // DECREMENTO UNA UNIDAD 
+        delay(150);
       }
   
  
   
 }
+  
