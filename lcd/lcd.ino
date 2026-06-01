@@ -29,7 +29,7 @@ void setup() {
   digitalWrite(6, HIGH);
   digitalWrite(7, HIGH);
 
-  digitalWrite(BUZ, HIGH);
+  //digitalWrite(BUZ, HIGH);
 
 
 
@@ -38,6 +38,20 @@ void setup() {
 
   lcd.begin();
   lcd.backlight();
+
+   
+  // SECUENCIA ASCENDENTE DEL 0 AL 10
+/*
+   for (i=0;i<=10;i++)
+    {
+      lcd.clear();
+      lcd.print(i);
+      delay(500);
+    }
+    lcd.clear();
+*/
+  
+// SECUENCIA DESCENDENTE CON BUZZER DE 10 A 0 
 
   for (i=10;i>0;i--)
    {
@@ -67,34 +81,26 @@ void setup() {
   
 
    digitalWrite(BUZ, LOW);
+
+   
 }
 
-
-void loop() {
-  // put your main code here, to run repeatedly:
+int j;
 
 
+void loop() 
 
-
-/* 
-  for (i=10;i>0;i--)
-   {
-    lcd.print(i);
-    delay(200);
-    lcd.clear();
-    delay(200);
-    digitalWrite(BUZ, HIGH);
-    delay(200);
-    digitalWrite(BUZ, LOW);
-   }
-
-  digitalWrite(BUZ, HIGH);
-  lcd.print("BOOOM");
-  delay(1500);
-  lcd.clear();
-  
- */ 
-
+ { /* 
+    for (i=0; i<20; i++)
+      for (j=0; j<4; j++)
+       {
+            lcd.setCursor(i,j);
+            lcd.print("hola");
+            delay(200);
+            lcd.clear();
+            delay(200);
+       }
+    */
   
 }
 
