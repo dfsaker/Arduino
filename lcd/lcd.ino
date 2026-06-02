@@ -7,7 +7,7 @@ int i;
 
 #define LED_BLANCO 5
 #define LED_ROJO 4
-#define BUZ 3
+#define BUZ 8
 
 
 void setup() {
@@ -81,6 +81,8 @@ void setup() {
   
 
    digitalWrite(BUZ, LOW);
+    digitalWrite(LED_ROJO, LOW);
+
 
    
 }
@@ -103,7 +105,3 @@ void loop()
     */
   
 }
-
-
-
-
