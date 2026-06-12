@@ -5,6 +5,8 @@ LCD_I2C lcd(0x27,20,4);
 
  
 #define BUZ 7
+#define LED 3
+
 int adc;
 float voltaje;
 float temperatura;
@@ -52,16 +54,17 @@ void setup() {
   pinMode(7,OUTPUT);
   pinMode(6,OUTPUT);
 
-  digitalWrite(6,HIGH);
-  digitalWrite(8,HIGH);
+ 
   
 
 
 
 
   digitalWrite(BUZ,HIGH);
+  digitalWrite(LED,HIGH);
   delay(500);
-   digitalWrite(BUZ,LOW);
+  digitalWrite(BUZ,LOW);
+  digitalWrite(LED,LOW);
  
 
   lcd.begin(20,4);
@@ -131,9 +134,11 @@ void loop()
         lcd.setCursor(3,3);
         lcd.print("Temp Maxima!!");
         digitalWrite(BUZ, HIGH);
+        digitalWrite(LED, HIGH);
         delay(300);
        
         digitalWrite(BUZ, LOW);
+        digitalWrite(LED, LOW);
         lcd.setCursor(3,3);
         lcd.print("             ");
        
