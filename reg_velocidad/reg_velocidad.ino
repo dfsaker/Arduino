@@ -8,7 +8,11 @@ LCD_I2C lcd(0x27,20,4);
 
 
 
-#define LED 3
+#define VOL 3
+
+#define  LED 4
+
+#define BUZ 7
 
 
 
@@ -18,6 +22,8 @@ void setup()
       lcd.begin();
       lcd.backlight();
       pinMode(3,OUTPUT);
+      pinMode(4,OUTPUT);
+      pinMode(7,OUTPUT);
 
       // put your setup code here, to run once:
 
@@ -25,11 +31,12 @@ void setup()
 
 int brillo;
 int adc;
+int Porcentaje;
 
 void loop()
 
  {
-  // put your main code here, to run repeatedly:
+ 
 
 
   adc=analogRead(A2); // LEEMOS EL VOLTAJE DEL POTE EN UNA ENTRADA ANALOGICA A2 VALOR ENTRE 0 Y 1023
@@ -38,14 +45,36 @@ void loop()
   
 
   lcd.clear();
-  lcd.print("Brillo: ");
+  lcd.print("Voltaje: ");
 
-  lcd.print(brillo*100/255); // SE CALCULA EN PORCENTAJES CUANDO BRILLO ALCANZA VALOR 255 ES 100%
+
+
+  Porcentaje=brillo*100/255;
+
+  lcd.print(Porcentaje); // SE CALCULA EN PORCENTAJES CUANDO BRILLO ALCANZA VALOR 255 ES 100%
+
+  if (Porcentaje>98) 
+  {
+
+    digitalWrite(BUZ, HIGH);
+    digitalWrite(LED, HIGH);
+    lcd.setCursor(1, 5);
+    lcd.print("VOLTAJE MAXIMO!");
+    delay(200);
+    lcd.clear();
+   // lcd.print("               ");
+    digitalWrite(BUZ, LOW);
+    digitalWrite(LED, LOW);
+    
+    
+
+
+  }
 
   lcd.print(" %");
 
-  analogWrite(LED,brillo);
+  analogWrite(VOL,brillo);
   
-  delay(100);
+  delay(200);
 
   }
