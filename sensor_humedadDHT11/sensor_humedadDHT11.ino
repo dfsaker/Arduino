@@ -2,40 +2,22 @@
 
 #include <LCD_I2C.h>
 
-DHT11 sensor(11);
+// SENSOR DE HUMEDAD Y TEMEPERATURA DHT11
 
+DHT11 sensor(11);  //CONFIGURAMOS PIN DIGITAL 11 PARA CONECTAR EL SENSOR DHT11
 
 LCD_I2C lcd(0x27,20,4);
 
 float temp, hum;
-
-//REGULADOR DE VELOCIDAD CON POTENCIOMETRO 
-
-
-
-#define VOL 3
-
-#define  LED 4
-
-#define BUZ 7
-
-
 
 void setup() 
     { 
 
       lcd.begin();
       lcd.backlight();
-      pinMode(3,OUTPUT);
-      pinMode(4,OUTPUT);
-      pinMode(7,OUTPUT);
-
       pinMode(11,INPUT_PULLUP);
 
-      // put your setup code here, to run once:
-    
-
-    }
+     }
 
 
 void loop()
@@ -43,7 +25,7 @@ void loop()
  {
 
  
-  sensor.read(hum,temp);
+  sensor.read(hum,temp); // LEEMOS LOS PARAMETROS DEL SENSOR DIGITAL 
   
   lcd.clear();
 
@@ -60,8 +42,4 @@ void loop()
   delay(1200);
 
 
-
-
- 
-
-  }
+}
